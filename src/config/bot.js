@@ -411,19 +411,19 @@ export const botConfig = {
     types: {
       // Built-in counter types and how each count is calculated.
       members: {
-        name: "👥 Members",
-        description: "Total members in the server",
+        name: "👥 Medlemmer",
+        description: "Samlet antal medlemmer på denne server",
         getCount: (guild) => guild.memberCount.toString(),
       },
       bots: {
         name: "🤖 Bots",
-        description: "Total bot accounts in the server",
+        description: "Antallet af bots på denne server",
         getCount: (guild) =>
           guild.members.cache.filter((m) => m.user.bot).size.toString(),
       },
       members_only: {
-        name: "👤 Humans",
-        description: "Total human members (non-bots)",
+        name: "👤 Mennesker",
+        description: "Samlet antal mennesker (Ingen bots)",
         getCount: (guild) =>
           guild.members.cache.filter((m) => !m.user.bot).size.toString(),
       },
@@ -434,13 +434,13 @@ export const botConfig = {
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
-    noPermission: "You do not have permission to use this command.",
-    cooldownActive: "Please wait {time} before using this command again.",
-    errorOccurred: "An error occurred while executing this command.",
+    noPermission: "Du har ikke adgang til denne command",
+    cooldownActive: "Venligst vent {time} før du kan bruge denne command igen",
+    errorOccurred: "Der opstod en fejl",
     missingPermissions:
-      "I am missing required permissions to perform this action.",
-    commandDisabled: "This command has been disabled.",
-    maintenanceMode: "The bot is currently in maintenance mode.",
+      "Jeg mangler perms for at kunne gøre dette",
+    commandDisabled: "Denne command er blevet stoppet",
+    maintenanceMode: "Denne bot er lige igang med at opdatere",
   },
 
   // =========================
@@ -530,10 +530,10 @@ if (configErrors.length > 0) {
 export const BotConfig = botConfig;
 
 const COMMAND_CATEGORY_FEATURE_MAP = {
-  birthday: "birthday",
+  birthday: "Fødselsdag",
   community: "community",
-  economy: "economy",
-  fun: "fun",
+  economy: "Økonomi",
+  fun: "Sjov",
   giveaway: "giveaways",
   jointocreate: "joinToCreate",
   leveling: "leveling",
@@ -547,7 +547,7 @@ const COMMAND_CATEGORY_FEATURE_MAP = {
   tools: "tools",
   utility: "utility",
   verification: "verification",
-  welcome: "welcome",
+  welcome: "Velkommen",
 };
 
 function normalizeCategoryKey(category) {
